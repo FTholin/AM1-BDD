@@ -61,7 +61,7 @@ Modifiez votre requête pour qu'elle renvoie les colonnes `nom`, `genre` et `ann
 Sachant comment fonctionne `SELECT`, supposons que nous ayons le code ci-dessous :
 
 ```sql
-SELECT nom AS 'Titres'
+SELECT nom AS Titres
 FROM films;
 ```
 
