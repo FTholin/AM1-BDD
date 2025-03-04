@@ -58,8 +58,6 @@ INSERT INTO startups (nom, localisation, categorie, nb_employes, montant_levee_d
 ('Scramptons',  'Long Island', 'Securité', 5,  200000,   8000000000,  2017,  'Jeune pousse',  'Henri Bernard',  'Home Security'),
 ('Dungees and Dragos',   'Atlanta',  'Jeux', 3,  300000,   1600000,  2014,  'Jeune pousse',  'Stuart Stickler',   'Tabletop Gaming for the Insufferable'),
 ('VaporWear',   'Virginia Beach', 'Social',   15, 450000 ,  14000000, 2017,  'Jeune pousse',  'TJ Harris',   'Social Network for Vaping Enthusiasts'),
-('RICE Media',  'Brooklyn', 'Video Streaming',NULL ,NULL,3000,  730000000,      1994,     'Shayna Craftsman',  '2cool4school'),
-('Townie666',   'Brooklyn',    2,NULL,20000, 80000, 2017,  'Jeune pousse',  'Sonny Li', '*_*'),
-('Wakeful',  'Brooklyn', 'Réalité Augmenté',  3,  30000, 1800000,  2016,  'Jeune pousse',  'Maria Epstein',  'Meditation VR App'),
+'Wakeful',  'Brooklyn', 'Réalité Augmenté',  3,  30000, 1800000,  2016,  'Jeune pousse',  'Maria Epstein',  'Meditation VR App'),
 ('PostGurt', 'Savannah', 'Social',   6,  550000,   200000000,   2013,  'Jeune pousse',  'Lauretta Brieman',  'Subscription Based Yogurt in the Mail'),
 ('Virtual Tour',   'Chicago',  'E-commerce',  12, 750000,   120000000,   2014 , 'Jeune pousse',  'Ari LBoy',   'Real Estate for Fake People');
