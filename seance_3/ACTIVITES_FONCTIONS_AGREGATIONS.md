@@ -153,7 +153,7 @@ La fonction `ROUND()` prend deux arguments entre parenthèses :
 Elle arrondit les valeurs de la colonne au nombre de décimales spécifié par le nombre entier.
 
 ```sql
-SELECT ROUND(prix, 0)
+SELECT ROUND(prix::numeric, 2)
 FROM applications;
 ```
 
@@ -165,7 +165,7 @@ Ici, nous passons la colonne prix et le nombre entier 0 comme arguments. SQL arr
 
 Dans l'éditeur de code, tapez :
 ```sql
-SELECT nom, ROUND(prix, 0)
+SELECT nom, ROUND(prix:numeric, 2)
 FROM applications;
 ```
 
@@ -251,7 +251,7 @@ Par exemple, nous pouvons vouloir savoir combien de films ont une note IMDb arro
 Pour ce faire, nous pouvons utiliser la syntaxe suivante :
 
 ```sql
-SELECT ROUND(note_imdb), COUNT(nom)
+SELECT ROUND(note_imdb:numeric, 2), COUNT(nom)
 FROM films
 GROUP BY ROUND(note_imdb)
 ORDER BY ROUND(note_imdb);
@@ -270,7 +270,7 @@ et ainsi de suite.
 La requête suivante est équivalente à celle qui précède :
 
 ```sql
-SELECT ROUND(note_imdb), COUNT(nom)
+SELECT ROUND(note_imdb:numeric, 2), COUNT(nom)
 FROM films
 GROUP BY 1
 ORDER BY 1;
