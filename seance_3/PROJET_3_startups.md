@@ -12,7 +12,7 @@ Rédigez des requêtes avec des fonctions d'agrégation pour récupérer des inf
 
 2. Quelle est la somme totale des valorisations pour toutes les startups ?
 3. Quel est le montant maximal de fonds levés par une startup ?
-4. Quel est le montant maximal levé par une startup en phase 'Jeune Pousse' ?
+4. Quel est le montant maximal levé par une startup en phase 'Jeune pousse' ?
 
 ### Historique et Ancienneté
 
