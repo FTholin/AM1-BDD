@@ -36,7 +36,7 @@ Les noms de colonnes exacts peuvent varier selon ta structure, mais l’idée es
 ## 3. Trouver les lieux dont le budget est de 20 $ ou moins
 
 **Question** : En supposant que chaque signe `$` correspond à 10 €, comment afficher tous les lieux qui coûtent 20 $ ou moins ?  
-*(Ici, on suppose que la colonne `ratio_prix_note` représente le nombre de signes `$`. Par exemple, `budget = 2` correspond à `$$` = 20 $.)*
+*(Ici, on suppose que la colonne `budget` représente le nombre de signes `$`. Par exemple, `budget = 2` correspond à `$$` = 20 $.)*
 
 
 
@@ -47,6 +47,11 @@ Les noms de colonnes exacts peuvent varier selon ta structure, mais l’idée es
 **Question** : Quelles colonnes peut-on utiliser pour lier les deux tables ?  
 **Réponse** :*(Ici, ce n’est pas une requête SQL mais une explication 
 
+Bien sûr, voici une version plus concise :
+
+
+Tu veux aussi un exemple pour un mois précis ou c’est bon comme ça ?
+---
 
 ## 5. Effectuer une jointure interne (INNER JOIN) pour obtenir toutes les évaluations avec le nom du lieu
 
@@ -125,30 +130,59 @@ Les noms de colonnes exacts peuvent varier selon ta structure, mais l’idée es
 
 ## 14. (Avec clause `WITH`) Sélectionner tous les avis publiés en 2020 et joindre les lieux pour n’afficher que le nom du lieu, la date et le commentaire
 
+Les systèmes de gestion de bases de données SQLite et PostgreSQL offrent tous deux des mécanismes pour formater ou extraire des parties spécifiques d'une date, mais ils utilisent des fonctions et des syntaxes différentes.
+
+---
+
+### En SQLite : Utilisation de `strftime` avec `%Y`
+
+- **La fonction `strftime`**  
+  SQLite propose la fonction `strftime` pour formater des valeurs de date et d'heure en chaîne de caractères selon un format spécifié.  
+  - **Syntaxe générale :**  
+    ```sql
+    strftime(format, date, modifier1, modifier2, ...)
+    ```
+    Ici, `format` est une chaîne dans laquelle on utilise des séquences d'échappement (par exemple `%Y`, `%m`, `%d`, etc.) pour indiquer les différentes parties de la date ou de l’heure.
+
+- **Utilisation de `%Y`**  
+  Le format `%Y` renvoie l'année sur 4 chiffres. Par exemple :
+  ```sql
+  SELECT strftime('%Y', '2024-04-08');
+  ```
+  Ce qui renverra la chaîne `'2024'`. Cela est utile lorsque vous souhaitez extraire l'année d'une date ou présenter les dates sous un format précis.
+
+---
+
+### En PostgreSQL : La fonction équivalente
+
+PostgreSQL n’emploie pas `strftime` mais offre plusieurs méthodes pour obtenir le même résultat :
+
+1. **Utiliser `to_char` pour le formatage**  
+   - **Fonctionnement :**  
+     `to_char` permet de convertir des valeurs de date ou timestamp en une chaîne de caractères selon un format spécifié, similaire à `strftime`.
+   - **Exemple d’utilisation :**
+     ```sql
+     SELECT to_char(current_date, 'YYYY');
+     ```
+     Cela renverra l'année courante sous forme de chaîne (ex. `'2024'`).
+
+2. **Utiliser `EXTRACT` pour obtenir un entier**  
+   - **Fonctionnement :**  
+     La fonction `EXTRACT` permet d'extraire une partie numérique d'une date, comme l'année.
+   - **Exemple d’utilisation :**
+     ```sql
+     SELECT EXTRACT(YEAR FROM current_date);
+     ```
+     Cette requête renverra l'année courante en tant que nombre (ex. `2024`).
+
+
+
+
 **Question** : Utiliser la clause `WITH` et (selon le SGBD) une fonction de date (ex. `strftime` en SQLite) pour isoler les avis de 2020.
 
 
-*(Si votre SGBD est différent de SQLite, adaptez la fonction pour extraire l’année.)*
 
-Bien sûr ! Voici un **autre exemple** totalement différent pour bien visualiser comment `strftime` fonctionne :
 
----
-
-### 🎂 Exemple – Trouver les anniversaires en **juillet** :
-
-Imaginons une table `utilisateurs` avec une colonne `date_naissance`.
-
-```sql
-SELECT nom, date_naissance
-FROM utilisateurs
-WHERE strftime('%m', date_naissance) = '07';
-```
-
-🔍 **Explication** :
-- `strftime('%m', date_naissance)` extrait le **mois** (au format `'01'` à `'12'`).
-- Ici, on récupère les utilisateurs nés en **juillet**.
-
----
 
 C’est super pratique pour filtrer sur des **mois**, **jours**, ou **années** sans modifier le format de date !
 
