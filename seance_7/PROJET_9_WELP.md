@@ -36,7 +36,7 @@ Les noms de colonnes exacts peuvent varier selon ta structure, mais l’idée es
 ## 3. Trouver les lieux dont le budget est de 20 $ ou moins
 
 **Question** : En supposant que chaque signe `$` correspond à 10 €, comment afficher tous les lieux qui coûtent 20 $ ou moins ?  
-*(Ici, on suppose que la colonne `budget` représente le nombre de signes `$`. Par exemple, `budget = 2` correspond à `$$` = 20 $.)*
+*(Ici, on suppose que la colonne `ratio_prix_note` représente le nombre de signes `$`. Par exemple, `budget = 2` correspond à `$$` = 20 $.)*
 
 
 
