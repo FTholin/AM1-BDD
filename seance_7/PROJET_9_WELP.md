@@ -47,11 +47,6 @@ Les noms de colonnes exacts peuvent varier selon ta structure, mais l’idée es
 **Question** : Quelles colonnes peut-on utiliser pour lier les deux tables ?  
 **Réponse** :*(Ici, ce n’est pas une requête SQL mais une explication 
 
-Bien sûr, voici une version plus concise :
-
-
-Tu veux aussi un exemple pour un mois précis ou c’est bon comme ça ?
----
 
 ## 5. Effectuer une jointure interne (INNER JOIN) pour obtenir toutes les évaluations avec le nom du lieu
 
