@@ -117,9 +117,9 @@ VALUES
 INSERT INTO Livre (titre, genre, prix, auteur_id)
 VALUES
     ('Les Misérables', 'Roman', 15.99, 1),
-    ('Le Dernier Jour d\'un Condamné', 'Roman', 6.50, 1),
+    ('Le Dernier Jour d''un Condamné', 'Roman', 6.50, 1),
     ('La Peste', 'Roman', 8.90, 2),
-    ('L\'Étranger', 'Roman', 7.20, 2),
+    ('L''Étranger', 'Roman', 7.20, 2),
     ('1984', 'Dystopie', 12.00, 3),
     ('La Ferme des animaux', 'Satire', 9.50, 3);
 ```
